@@ -14,6 +14,8 @@ Here I'am trying to lern littel bit op MySQL.
 - I made a simple layout onlu username and password
 - used a bootstrap to make responsive
 
+###### I used function.php and database.php only in login_update.php and login_update.php.
+
 #### login_create
 Here I try to learn how to connect with MySQL. Made a form and gave the name. Made a variable where that data can be saved.
  ##### CODE TO REMEMBER (variable can be changed)
