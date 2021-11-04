@@ -11,3 +11,32 @@ Here I'am trying to lern littel bit op MySQL.
 - I made a simple layout onlu username and password
 - used a bootstrap to make responsive
 
+#### login_create
+Here I try to learn how to connect with MySQL. Made a form and gave the name. Made a variable where that data can be saved.
+ ##### CODE TO REMEMBER (variable can be changed)
+ - if (isset($_POST['submit']))
+ ==> If buttun is select it runs
+ - $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
+ ==> It will connect to database
+ - $query = "INSERT INTO users (username, password)";
+ ==> The things we made in MySQL
+ - $query .= "VALUE ('$username', '$password')";
+ ==> Which value we want to save
+ - $result = mysqli_query($connection, $query);
+ ==> to save value to database
+
+#### login_read
+How can we read data from MySQL in php. That is what I try to know here.
+##### CODE TO REMEMBER (variable can be changed)
+- if (isset($_POST['submit'])) 
+==> is not need here
+- $query = "SELECT * FROM users";
+==> select all data from
+- while($row = mysqli_fetch_assoc($result)){ print_r($row);}
+==> in html we can show data. Data is in array so we have to loop.
+
+#### login_update 
+
+- made a form
+- to change data made a input id
+- to many code in one place so I made new database.php file. This file will connect to MySQL
