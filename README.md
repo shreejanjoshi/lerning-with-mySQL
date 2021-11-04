@@ -5,6 +5,9 @@ Here I'am trying to lern littel bit op MySQL.
 - How to connect php with SQL
 - make a new data 
 - connect that data to SQL
+- read data from MySQL
+- Update data in Php (change it in MySQL)
+- Delete data
 
 ### What's happing
 
@@ -40,3 +43,10 @@ Made a form to change data in MySQL. Create input id to know which data to chang
 ##### CODE TO REMEMBER (variable can be changed)
 - $query = "UPDATE users SET username = '$username', password = '$password' WHERE id = '$id'";
 ==> it will update username from value variable username and so on
+
+In login_update I had a lot of problem too many error but all were simple error like space, forgot put ; , wrote code outside of if statement so it was showing variable undefine, in form action wrote wrong name.
+
+#### login_delete
+Here I will try to delete data from that I have create by login_create.php.
+##### CODE TO REMEMBER (variable can be changed)
+- $query = "DELETE FROM users WHERE id='$id'"; ==> This code will delete data 
