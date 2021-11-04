@@ -12,15 +12,14 @@ if (isset($_POST['submit'])) {
         die("Database connection failed");
     }
 
-    // if ($username && $password) {
-    //     echo $username . " " . $password;
-    // } elseif ($username = "") {
-    //     echo "require username";
-    // } elseif ($password = "") {
-    //     echo "require username";
-    // } else {
-    //     echo "Need your username and password";
-    // }
+    $query = "INSERT INTO users (username, password)";
+    $query .= "VALUE ('$username', '$password')";
+
+    $result = mysqli_query($connection, $query);
+
+    if(!$result){
+        die("Query failed");
+    }
 }
 
 ?>
@@ -40,7 +39,7 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="container">
         <div class="col-xs-6">
-            <form action="login.php" method="post">
+            <form action="login_create.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username" class="form-control">
