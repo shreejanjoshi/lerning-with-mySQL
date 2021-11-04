@@ -1,13 +1,28 @@
 <?php
 
 include "database.php";
+include "function.php";
 
-$query = "SELECT * FROM users";
+if (isset($_POST['submit'])) {
 
-$result = mysqli_query($connection, $query);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $id = $_POST['id'];
 
-if (!$result) {
-    die("Query failed");
+    //change username of MySQL from var where id from number
+    $query = "UPDATE users SET ";
+    $query .= "username = '$username', ";
+    $query .= "password = '$password' ";
+    $query .= "WHERE id = '$id'";
+
+
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die("Query failed" . mysqli_error($connection));
+    } else {
+        echo "Record Update";
+    }
 }
 
 ?>
@@ -27,7 +42,7 @@ if (!$result) {
 <body>
     <div class="container">
         <div class="col-xs-6">
-            <form action="login_create.php" method="post">
+            <form action="login_update.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username" class="form-control">
@@ -38,18 +53,11 @@ if (!$result) {
                 </div>
                 <div class="form-group">
                     <select name="id" id="">
-                        <option value="">1</option>
+                        <?php showAlLData() ?>
                     </select>
-                </div> 
-                <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+                </div>
+                <input class="btn btn-primary" type="submit" name="submit" value="UPDATE">
             </form>
-            <?php
-            while ($row = mysqli_fetch_assoc($result)) {
-            ?>
-                <pre><?php print_r($row); ?></pre>
-            <?php
-            }
-            ?>
         </div>
     </div>
 </body>

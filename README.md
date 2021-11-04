@@ -36,7 +36,7 @@ How can we read data from MySQL in php. That is what I try to know here.
 ==> in html we can show data. Data is in array so we have to loop.
 
 #### login_update 
-
-- made a form
-- to change data made a input id
-- to many code in one place so I made new database.php file. This file will connect to MySQL
+Made a form to change data in MySQL. Create input id to know which data to change. To many code in one place so I made new database.php file. This file will connect to MySQL.
+##### CODE TO REMEMBER (variable can be changed)
+- $query = "UPDATE users SET username = '$username', password = '$password' WHERE id = '$id'";
+==> it will update username from value variable username and so on
