@@ -1,7 +1,7 @@
 # lerning-with-mySQL
 
 ### What's the Goal
-Here I'am trying to lern littel bit op MySQL.
+Here I'am trying to learn littel bit op MySQL.
 - How to connect php with SQL
 - make a new data 
 - connect that data to SQL
@@ -9,9 +9,9 @@ Here I'am trying to lern littel bit op MySQL.
 - Update data in Php (change it in MySQL)
 - Delete data
 
-### What's happing
+### What's going on
 
-- I made a simple layout onlu username and password
+- I made a simple layout only username and password
 - used a bootstrap to make responsive
 
 ###### I used function.php and database.php only in login_update.php and login_update.php.
