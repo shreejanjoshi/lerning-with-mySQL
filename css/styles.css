@@ -1,0 +1,18 @@
+body{
+    margin: 0 auto;
+    text-align: center;
+}
+
+input{
+    width: 30%;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+label{
+    padding-top: 20px;
+}
+
+.container{
+    width: 750px;
+}
