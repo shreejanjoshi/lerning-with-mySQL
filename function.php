@@ -1,6 +1,30 @@
 <?php include 'database.php'; ?>
 <?php
 
+function createData()
+{
+    if (isset($_POST['submit'])) {
+
+        global $connection;
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $username = mysqli_real_escape_string($connection, $username);
+        $password = mysqli_real_escape_string($connection, $password);
+
+        $query = "INSERT INTO users (username, password)";
+        $query .= "VALUE ('$username', '$password')";
+
+        $result = mysqli_query($connection, $query);
+
+        if (!$result) {
+            die("Query failed " . mysqli_error($connection));
+        } else {
+            echo "Record Create";
+        }
+    }
+}
+
 function showAlLData()
 {
     global $connection;
@@ -40,8 +64,8 @@ function updateData()
 function deleteData()
 {
     global $connection;
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    // $username = $_POST['username'];
+    // $password = $_POST['password'];
     $id = $_POST['id'];
 
     $query = "DELETE FROM users WHERE id='$id'";
